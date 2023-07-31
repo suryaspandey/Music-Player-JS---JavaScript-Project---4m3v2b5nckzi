@@ -30,8 +30,6 @@ Please be aware that this Spotify clone project uses admin API access for authen
 
 •	Search for songs, artists, etc.
 
-•	Search results with clickable progress bar
-
 # Prerequisites
 •	**VS Code:** Users should have Visual Studio Code (VS Code) installed on their machines. VS Code is a lightweight, open-source code editor that provides an excellent development environment for web applications. Users can download and install VS Code from the official website: https://code.visualstudio.com/
 
