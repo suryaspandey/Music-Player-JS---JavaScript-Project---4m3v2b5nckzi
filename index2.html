@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<!-- https://www.youtube.com/watch?v=rkzP5pRF7uo -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySpotify</title>
+
+    <link rel="icon" href="spotify_title_logo-transparent.png">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- <script defer src="script.js"></script> -->
+    <script defer src="login_script.js"></script>
+
+
+    <!-- <script defer src="search_button.js"></script> -->
+    <!-- <script src="index_playlist.js"></script> -->
+
+    <!-- musicplayer -->
+    <link rel="stylesheet" href="new_music_player_style.css">
+
+    <script defer src="playlist_songs2.js"></script>
+    <script defer src="playlist_songs_header.js"></script>
+
+    <!-- <script defer src="new_music_player_script.js"></script> -->
+    <!-- <script defer src="playlist.js"></script> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+        <link rel="icon" href="spotify_title_logo-transparent.png">
+
+
+
+
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <div class="logo">
+                <a href="./index.html"><img src="./spotify_logo.png" alt="spotify logo" height="50px" width="50px"></a>
+                <span class="logo-text">Spotify</span>
+            </div>
+            
+            <div class="searchNlogin">
+
+                <div id="searchbox-container">
+                    <input id = "search-text" type="search" placeholder="Search here..." />
+                    <button id="search-btn"><i class="fa-2x fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                
+             
+                <!-- <form>
+                    <input id = "search-text" type="search" placeholder="Search..." />
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <button type="submit">Search</button> -->
+                  <!-- </form> -->
+
+                <!-- <div class="search">Search</div> -->
+                <!-- <button id="login_btn" >YourName
+                    <a id="login-to-spotify" href="https://accounts.spotify.com/authorize?client_id=748e9e04d1a24bb08f262476d1653821&response_type=token&redirect_uri=http://127.0.0.1:5500/SpotifyClone/index.html&scope=user-read-private%20user-read-email">Name</a>
+                </button> -->
+
+
+                <!--                                                                                 748e9e04d1a24bb08f262476d1653821                                                                    http://127.0.0.1:5500/SpotifyClone/index.html -->
+
+                <button id="login_btn">YourName
+                    <!-- <a id="login-to-spotify" href="https://accounts.spotify.com/authorize?client_id=748e9e04d1a24bb08f262476d1653821&response_type=token&redirect_uri=http://127.0.0.1:5500/SpotifyClone/index.html&scope=user-read-private%20user-read-email">Name</a> -->
+                </button>
+
+
+
+            </div>
+        </div>
+
+
+        <div id="playlist-container">
+
+        </div>
+
+        <div id="playlist-header">
+            <!-- <table>
+                <tr>
+                    <td>
+                        <img src="" alt="playlist-header" height="185px" width="200px">
+                    </td>
+                    <td id="header-text">
+                        <div>
+                            <span>PLAYLIST</span>
+                        <p></p>
+
+                        </div>
+                    </td>
+                </tr>
+
+            </table> -->
+
+        </div>
+
+        <!-- <button class="audio-buttons" id="fast-forward-five-sec">
+            <i class="fa-solid fa-forward-fast"></i>
+        </button> -->
+
+        <!-- <button class="material-symbols-rounded audio-buttons" id="repeat">repeat</button> -->
+
+        <!-- <button class="audio-buttons" onclick="prev()">
+            <i class="fa-solid fa-backward"></i>
+        </button>
+
+        <button onclick="playPause()" class="audio-buttons">
+            <i id="play-button-icon" class="fa-solid fa-play"></i>
+        </button>
+
+        <button class="audio-buttons" onclick="next()">
+            <i class="fa-solid fa-forward"></i>
+        </button> -->
+
+        <!-- <button class="material-symbols-rounded audio-buttons" id="shuffle">shuffle</button> -->
+
+        <!-- <button class="audio-buttons" id="fast-reverse-five-sec">
+             <i class="fa-sharp fa-regular fa-backward"></i> 
+             <i class="fa-regular fa-backward-fast audio-buttons"></i> 
+        </button> -->
+
+        
+
+        <audio id="audio">
+            <!-- <audio id="audio" > -->
+            <source id = "audioSource" src=""></source>
+        </audio> 
+
+        <br>
+        <table id="song-content">
+            <thead>
+
+            <tr>
+                <th id="track_no">Track#</th>
+                <th id="title_head">TITLE</th>
+                <th></th>
+                <th id="album_head">Album</th>
+                <th id="artist_head">Artist</th>
+                <th id="duration_head"><i class="fa-regular fa-clock" style="color: #ffffff;"></i></th>
+
+            </tr>
+        </thead>
+        <tbody id="song-list">
+
+        </tbody>
+        </table>
+
+        <div class="content">
+
+            <div class="music-titles">
+                <p class="name">Music Names</p> 
+                <p class="artist">Artist name</p>
+            </div>
+          
+           
+            <div class="music_and_controls_container">
+
+                <div class="progress-details">
+                    <div class="progress-bar">
+                        <span></span>
+                    </div>
+                    <div class="time">
+                        <span class="current">0.00</span>
+                        <span class="final"></span>
+                    </div>
+                </div>
+               
+            
+                <div class="control-btn">
+                    <span class="material-symbols-rounded" id="fast-forward-five-sec">fast_forward</span>
+                    <span class="material-symbols-rounded" id="repeat1">repeat</span>
+                    <span class="material-symbols-rounded" id="prev1">skip_previous</span>
+                    <div class="play-pause">
+                        <span class="material-icons play-pause-icon" style="font-size: 40px;">play_arrow</span>
+
+                        <!-- <span class="material-symbols-rounded play-pause">play_arrow</span> -->
+                        <!-- <span class="material-icons play-icon">play_arrow</span>
+                        <span class="material-icons pause-icon">pause</span> -->
+                    </div>
+                    <span class="material-symbols-rounded" id="next1">skip_next</span>
+                    <span class="material-symbols-rounded" id="shuffle1">shuffle</span>
+                    <span class="material-symbols-rounded" id="fast-reverse-five-sec">fast_rewind</span>
+                   
+                </div>
+            </div>
+        </div>
+    
+        
+       
+        <audio src="" class="main-song"></audio>
+    
+    </div>
+
+    <!-- <script>
+        // Get the current URL without query parameters and hash
+        const baseUrl = window.location.href.split('?')[0].split('#')[0];
+    
+        // Replace the current URL with the base URL
+        history.replaceState(null, '', baseUrl);
+      </script> -->
+    
+</body>
+</html>

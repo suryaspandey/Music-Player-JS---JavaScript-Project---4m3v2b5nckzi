@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MySpotify</title>
+        <link rel="stylesheet" href="style.css">
+        <!-- <script defer src="auth.js"></script> -->
+        <script defer src="index_playlist.js"></script>
+        <script defer src="search_button.js"></script>
+        <script defer src="playlist_songs2.js"></script>
+    <link rel="stylesheet" href="new_music_player_style.css">
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <link rel="icon" href="spotify_title_logo-transparent.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+</head>
+<body>
+<div class="header">
+  <div class="logo">
+    <a id = "spotify-redirect-link" href="./index.html"><img src="./spotify_logo.png" alt="spotify logo" height="50px" width="50px"></a>
+    <span class="logo-text">Spotify</span>
+  </div>
+
+  <div id="searchbox-container">
+    <input id = "search-text" type="search" placeholder="Search here..." />
+    <button id="search-btn"><i class="fa-2x fa-solid fa-magnifying-glass"></i></button>
+</div>
+
+  <button id="login_btn">YourName
+    <a href="https://accounts.spotify.com/authorize?client_id=748e9e04d1a24bb08f262476d1653821&response_type=token&redirect_uri=http://127.0.0.1:5500/SpotifyClone/index.html&scope=user-read-private%20user-read-email"></a>
+  </button>
+</div>
+
+<!-- currrent coed -->
+    <table id="search-results">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Song Name</th>
+          <th>Artist</th>
+        </tr>
+      </thead>
+      <tbody id="search-results">
+        <!-- Search results will be dynamically populated here -->
+      </tbody>
+      <audio id="audio-player" controls></audio>
+      
+    </table>
+    <div class="content">
+
+      <div class="music-titles">
+          <p class="name">Music Names</p> 
+          <p class="artist">Artist name</p>
+      </div>
+    
+     
+      <div class="music_and_controls_container">
+
+          <div class="progress-details">
+              <div class="progress-bar">
+                  <span></span>
+              </div>
+              <div class="time">
+                  <span class="current">0.00</span>
+                  <span class="final"></span>
+              </div>
+          </div>
+         
+      
+          <div class="control-btn">
+              <span class="material-symbols-rounded" id="fast-forward-five-sec">fast_forward</span>
+              <span class="material-symbols-rounded" id="repeat1">repeat</span>
+              <span class="material-symbols-rounded" id="prev1">skip_previous</span>
+              <div class="play-pause">
+                  <span class="material-icons play-pause-icon" style="font-size: 40px;">play_arrow</span>
+              </div>
+              <span class="material-symbols-rounded" id="next1">skip_next</span>
+              <span class="material-symbols-rounded" id="shuffle1">shuffle</span>
+              <span class="material-symbols-rounded" id="fast-reverse-five-sec">fast_rewind</span>
+             
+          </div>
+      </div>
+  </div>
+  <audio src="" class="main-song"></audio>
+
+  <!-- <script>
+    // Get the current URL without query parameters and hash
+    const baseUrl = window.location.href.split('?')[0].split('#')[0];
+
+    // Replace the current URL with the base URL
+    history.replaceState(null, '', baseUrl);
+  </script> -->
+
+</body>
+</html>

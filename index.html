@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MySpotify</title>
+        <link rel="stylesheet" href="style.css">
+        <script defer src="index_playlist.js"></script>
+        <!-- <script defer src="search_button.js"></script> -->
+        <!-- <script defer src="authvalidation.js"></script> -->
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <link rel="icon" href="spotify_title_logo-transparent.png">
+        <script>
+
+            (function(){
+                const stortedToken = localStorage.getItem('accessToken');
+                const storedExpiresIn = localStorage.getItem('expiresIn');
+                const storedTokenCreateTime = localStorage.getItem('tokenStoredAt');
+
+                const hasIsValidToken = () => {
+                    
+                    if(stortedToken && storedExpiresIn) {
+                        const currentTime = Date.now();
+                        const timeDelta = (currentTime - Number(storedTokenCreateTime))/1000;
+                        return (timeDelta - Number(storedExpiresIn))>0;
+                    }
+                    return false;
+                }
+                if(hasIsValidToken()) {
+                    return;
+                }
+                const hash = window.location.hash;
+                if(!hasIsValidToken() && hash) {
+                    const queryParams = {};
+    
+                    hash.split('&').forEach((pair) => {
+                    const [key, value] = pair.split('=');
+                    queryParams[key] = value;
+                    });
+
+                    const accessToken = queryParams["#access_token"];
+                    const tokenType = queryParams.token_type;
+                    const expiresIn = queryParams.expires_in;
+
+                    localStorage.setItem('accessToken', accessToken);
+                    localStorage.setItem('tokenType', tokenType);
+                    localStorage.setItem('expiresIn', expiresIn);
+                    localStorage.setItem('storedTokenCreateTime', Date.now());
+
+                    const baseUrl = window.location.href.split('?')[0].split('#')[0];
+        
+                    // Replace the current URL with the base URL
+                    history.replaceState(null, '', baseUrl);
+                    return;
+                }
+                if(!hash) {
+                    window.location.href = '/login_page.html';
+                    return;
+                }
+            })();
+            
+        </script>
+    </head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a id = "spotify-redirect-link"><img id = "spotify-redirect-link-img" src="./spotify_logo.png" alt="spotify logo" height="50px" width="50px"></a>
+            <span class="logo-text">Spotify</span>
+        </div>
+        
+        <div class="searchNlogin">
+            
+            <div id="searchbox-container">
+                <input id = "search-text" type="search" placeholder="Search here..." />
+                <button id="search-btn"><i class="fa-2x fa-solid fa-magnifying-glass"></i></button>
+              </div>
+            <!-- <form>
+                <input id = "search-text" type="search" placeholder="Search..." />
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <button type="submit">Search</button> -->
+              <!-- </form> -->
+
+            <!-- <div class="search">Search</div> -->
+            <button id="login_btn">YourName
+                <a href="https://accounts.spotify.com/authorize?client_id=748e9e04d1a24bb08f262476d1653821&response_type=token&redirect_uri=http://127.0.0.1:5500/SpotifyClone/index.html&scope=user-read-private%20user-read-email"></a>
+            </button>
+        </div>
+    </div>
+    <!-- <div class="menu">
+        <h2 class="menu-list">
+            <p class="home">HOME</p>
+            <p class="search">SEARCH</p>
+            <p class="playlist">PLAYLIST</p>
+        </h2>
+    </div> -->
+
+    <div class="grid-container">
+        <!-- <div class="menu">
+                <li> <i class="fa-sharp fa-solid fa-house" style="color: #ffffff;"></i>
+                    <a id="home-link" href="./index.html" class="home">HOME</a>
+                </li>
+                <li><i class="fa-sharp fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i>
+                    <a href="#" class="search">SEARCH</a>
+                </li>
+             
+        </div> -->
+                   
+
+        <div class="playlist-container" id="playlist-container"> 
+        </div> 
+
+        <!-- <script>
+            // Get the current URL without query parameters and hash
+            const baseUrl = window.location.href.split('?')[0].split('#')[0];
+        
+            // Replace the current URL with the base URL
+            history.replaceState(null, '', baseUrl);
+          </script> -->
+
+</body>
+</html>
