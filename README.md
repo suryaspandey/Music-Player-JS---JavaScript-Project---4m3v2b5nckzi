@@ -2,7 +2,7 @@
 
 A Spotify clone built using HTML, CSS, and JavaScript that allows users to log in, view featured playlists, play songs, search for tracks, and control the playback.
 
-# Hosted Link:
+**Hosted Link:**
 https://6476dabb481a915c8e9f1c21-prismatic-c.netlify.app/ 
 
 # Login to your Spotify account using the below credentials to access this application
