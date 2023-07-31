@@ -55,16 +55,19 @@ Please be aware that this Spotify clone project uses admin API access for authen
 
 # Screenshots
 Login Page
-![login](https://github.com/suryaspandey/Music-Player-JS---JavaScript-Project---4m3v2b5nckzi/assets/25412701/27f22be9-7e15-4c6c-9ecb-c265038312b4)
+![Screenshot](login.PNG)
 
 Home Page
-![homepage](https://github.com/suryaspandey/Music-Player-JS---JavaScript-Project---4m3v2b5nckzi/assets/25412701/e8a4be71-6824-4ece-a85f-7a4a4ddadc7a)
+![Screenshot](homepage.PNG)
 
 Playlist Page
-![playlistpage](https://github.com/suryaspandey/Music-Player-JS---JavaScript-Project---4m3v2b5nckzi/assets/25412701/a7ab3715-9a48-45b5-83ea-00f95890353c)
+![Screenshot](playlistpage.PNG)
 
 Search Page
-![search](https://github.com/suryaspandey/Music-Player-JS---JavaScript-Project---4m3v2b5nckzi/assets/25412701/77aeac47-6b2e-4719-af8a-7acf2dd3ef6d)
+![Screenshot](search.PNG)
+
+
+
 
 
 
